@@ -1,0 +1,16 @@
+.startButton {
+    background-color: deeppink;
+    border: none;
+    width: 10%;
+    min-width: 120px;
+    height: 7%;
+    min-height: 50px;
+    position: absolute;
+    left: 0;
+    -webkit-box-shadow: 1px 1px 1px;
+    -moz-box-shadow: 1px 1px 1px;
+    box-shadow: 1px 1px 1px;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-weight: bold;
+    font-size: 14px;
+}

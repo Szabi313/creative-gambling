@@ -1,0 +1,40 @@
+@keyframes fly-up{
+    0% {top: 100%;}
+    /*96% {top: 0%; height: 150px; width: 150px; left: 33%}
+    98% {top: 0%; height: 140px; width: 155px; left: 32.5%}*/
+    100% {top: -25%/*; height: 150px; width: 150px; left: 33%*/}
+}
+
+.bubble{
+    border-width: 1px 5px 5px 1px;
+    border-color: #000;
+    border-style: solid;
+    /*width: 150px;
+    height: 150px;*/
+    /*width: 20%;
+    height: 20%;*/
+    border-radius:50%;
+    background: radial-gradient(lightblue 25%, deepskyblue 75%);
+    position: absolute;
+    bottom: 0%;
+    /*top: 80%;*/
+    /*left: 33%;*/
+    /*animation-name: fly-up;/*
+    /*animation-duration: 3s;*/
+    /*animation-timing-function: ease-in;*/
+    /*animation-iteration-count: infinite;*/
+    /*animation-direction: alternate;*/
+   /* animation-fill-mode: forwards;*/
+}
+
+.bubble-1{
+    animation-duration: 3s;
+}
+
+.bubble-2{
+    animation-duration: 2500ms;
+}
+
+.bubble-3{
+    animation-duration: 2750ms;
+}
