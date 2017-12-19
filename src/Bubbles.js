@@ -3,6 +3,7 @@ import Bubble from './Bubble';
 //import {Transition, TransitionGroup} from 'react-transition-group';
 import StartButton from './StartButton';
 //import basicData from './bubbles-data'
+import BubbleCSSTransition from './BubbleCSSTransition'
 
 class Bubbles extends Component{
     constructor(props){
@@ -19,7 +20,7 @@ class Bubbles extends Component{
         }
 
         this.state = {
-            bubbles: this.blowBubblesData(5),
+            bubbles: this.blowBubblesData(25),
             //in: false
         }
 
@@ -58,7 +59,7 @@ class Bubbles extends Component{
                 left: this.setRandomProperty(this.bubbleObjectBasicData.left),
                 duration: this.setRandomProperty(this.bubbleObjectBasicData.duration),
                 size: this.setRandomProperty(this.bubbleObjectBasicData.size),
-                timeout:  this.setRandomProperty(this.bubbleObjectBasicData.timeout),
+                timeout:  i*500 + this.setRandomProperty(this.bubbleObjectBasicData.timeout),
             })
         }
 
@@ -96,47 +97,14 @@ class Bubbles extends Component{
     }
 
 
-    makeBubbles = () => {
+    /*makeBubbles = () => {
         return this.state.bubbles.map((item, i) => (
-            <Bubble
-                key={i}
-                id={i}
-                left={item.left} in={item.show}
-                duration={item.duration}
-                size={item.size}
-                timeout={item.timeout}
-                onClick={this.handleClickBubble}
-            />
+
+
+            <BubbleCSSTransition key={i} id={i} in={item.show} style={{left: `${20}%`, width: `${item.size}px`,
+            height: `${item.size}px`, animationDelay: `${item.timeout}ms`}}/>
         ))
-    }
-
-
-    // componentDidMount(){
-    //     let bubbles = this.state.bubbles;
-    //     let bubble = {};
-    //     this.timerID = setInterval(
-    //         () => {
-    //             bubbles = bubbles.map((elem, i) => {
-    //                 elem.timeout = 0;
-    //                 elem.duration = 0;
-    //                 //elem.bottom = '0';
-    //                 elem.show = false
-    //
-    //                 return elem;
-    //             })
-    //             this.setState({bubbles: bubbles})
-    //
-    //             bubbles = bubbles.map((elem, i) => {
-    //                 elem.show = true;
-    //                 return elem;
-    //             })
-    //             this.setState({bubbles: bubbles})
-    //
-    //             //console.log(bubbles);
-    //         },
-    //         5000
-    //     );
-    // }
+    }*/
 
 
     render(){
@@ -145,15 +113,14 @@ class Bubbles extends Component{
             <div>
                 {
                     this.state.bubbles.map((item, i) => (
-                        <Bubble
+                        <BubbleCSSTransition
+                            in={item.show}
                             key={i}
-                            id={i}
-                            left={item.left} in={item.show}
-                            duration={item.duration}
-                            size={item.size}
-                            timeout={item.timeout}
-                            onClick={this.handleClickBubble}
-                        />
+                            style={{
+                                left: `${item.left}%`,
+                                width: `${item.size}px`,
+                                height: `${item.size}px`,
+                                animationDelay: `${item.timeout}ms` }}/>
                     ))
                 }
                 <StartButton onClick={this.startGame}/>

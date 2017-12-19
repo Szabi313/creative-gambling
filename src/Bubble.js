@@ -11,8 +11,9 @@ const duration = 3000;
     //exited: {bottom: '-20%'}
 };*/
 
-const FlyUp = ({in: inProp, left: leftVal, duration: durVal, size: sizeVal, timeout: delayVal, id: idVal, key: keyVal, transition: transitionData, addEndListener: aelVal, addEndListener: endListenerFunc}) => (
-    <Transition in={inProp} timeout={delayVal}>
+const FlyUp = ({in: inProp, left: leftVal, duration: durVal, size: sizeVal, timeout: delayVal, id: idVal, key: keyVal,
+                   transition: transitionData, onEntering: handleOnEntering}) => (
+    <Transition in={inProp} timeout={delayVal} onEntering={handleOnEntering}>
         {(state) => (
             console.log(`State: ${state}`),
 
@@ -23,7 +24,9 @@ const FlyUp = ({in: inProp, left: leftVal, duration: durVal, size: sizeVal, time
                 height: `${sizeVal}px`,
                 ...transitionData[state],
             }} id={idVal}
-                 addEndListener={(node, done) => {node.addEventListener('transitionend', endListenerFunc, false)}}></div>
+                 >
+
+            </div>
         )}
     </Transition>
 )
@@ -33,7 +36,7 @@ class Bubble extends Component{
     constructor(props){
         super(props);
         this.state = {
-            show: false,
+            show: this.props.in,
             transition: {
                 entering: {bottom: '-20%'},
                 entered: {bottom: '120%'},
@@ -43,15 +46,25 @@ class Bubble extends Component{
     }
 
 
+    componentDidMount(){
+        /*setInterval(() => {
+            console.log(`Duration: ${this.props.duration}, delay: ${this.props.timeout}`)
+        }, 5000)*/
+    }
+
+
     handleClick = (e) => {
         let transition = this.state.transition;
         transition.exited = {bottom: 0}
         this.setState({transition: transition})
+        //console.log(e.target.style)
         this.props.onClick(e);
     }
 
-    endTransition = () => {
-        console.log("END");
+
+    handleOnEntering = () => {
+        console.log(`dur: ${this.props.duration}, delay: ${this.props.timeout}`);
+        const interval = this.props.duration + this.props.timeout;
     }
 
 
@@ -59,7 +72,11 @@ class Bubble extends Component{
         return (
             <TransitionGroup>
                 <div onClick={this.handleClick}>
-                    <FlyUp addEndListener={this.endTransition()} id={this.props.id} in={!!this.props.in} left={this.props.left} duration={this.props.duration} size={this.props.size} timeout={this.props.timeout} transition={this.state.transition}/>
+                    <FlyUp id={this.props.id} in={!!this.props.in}
+                           left={this.props.left} duration={this.props.duration} size={this.props.size}
+                           timeout={this.props.timeout} transition={this.state.transition}
+                           onEntering={this.handleOnEntering}
+                    />
                 </div>
             </TransitionGroup>
         )

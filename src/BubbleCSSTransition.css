@@ -1,0 +1,45 @@
+.base{
+    /*border: black 1px solid;
+    position: absolute;
+    width: 50px;
+    height: 50px;*/
+    border-width: 1px 5px 5px 1px;
+    border-color: #000;
+    border-style: solid;
+    border-radius:50%;
+    background: radial-gradient(lightblue 25%, deepskyblue 75%);
+    position: absolute;
+    bottom: -20%;
+    opacity: 0.5;
+}
+
+@keyframes flyUp {
+    from {bottom: -20%}
+    to {bottom: 120%}
+}
+
+.fly-enter{
+    /*bottom: 0;*/
+    /*animation-name: flyUp;*/
+}
+
+.fly-enter.fly-enter-active{
+    bottom: 130%;
+    /*transition: bottom 3000ms ease-out;*/
+    animation-name: flyUp;
+    animation-duration: 10000ms;
+    animation-iteration-count: infinite;
+}
+
+.fly-exit{
+    /*bottom: 90%;*/
+    /*animation-name: flyUp;*/
+}
+
+.fly-exit.fly-exit-active{
+    bottom: 0;
+    /*transition: bottom 3000ms ease-out;*/
+    animation-name: flyUp;
+    animation-direction: reverse;
+    animation-duration: 0ms;
+}

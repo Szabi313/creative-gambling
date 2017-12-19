@@ -16,7 +16,7 @@
     border-radius:50%;
     background: radial-gradient(lightblue 25%, deepskyblue 75%);
     position: absolute;
-    bottom: 0%;
+    /*bottom: 0%;*/
     /*top: 80%;*/
     /*left: 33%;*/
     /*animation-name: fly-up;/*
