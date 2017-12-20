@@ -9,12 +9,13 @@
     border-radius:50%;
     background: radial-gradient(lightblue 25%, deepskyblue 75%);
     position: absolute;
-    bottom: -20%;
+    bottom: -30%;
     opacity: 0.5;
+    z-index: 1000;
 }
 
 @keyframes flyUp {
-    from {bottom: -20%}
+    from {bottom: -30%}
     to {bottom: 120%}
 }
 
@@ -37,7 +38,7 @@
 }
 
 .fly-exit.fly-exit-active{
-    bottom: 0;
+    bottom: -30%;
     /*transition: bottom 3000ms ease-out;*/
     animation-name: flyUp;
     animation-direction: reverse;

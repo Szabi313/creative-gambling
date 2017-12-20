@@ -6,18 +6,22 @@ class StartButton extends Component{
         super(props);
 
         this.state = {
-            show: true
+            //show: true
         }
     }
 
+
+
+
+
     handleClickStart = () => {
-        this.setState({show: false})
+        //this.setState({show: false})
         this.props.onClick();
     }
 
     render(){
         return(
-             this.state.show && <button onClick={this.handleClickStart} className='startButton'>Start</button>
+             this.props.show && <button onClick={this.handleClickStart} className='startButton' show={this.props.show}>Start</button>
         )
     }
 }

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Bubble from './Bubble';
-//import {Transition, TransitionGroup} from 'react-transition-group';
 import StartButton from './StartButton';
 //import basicData from './bubbles-data'
-import BubbleCSSTransition from './BubbleCSSTransition'
+import BubbleCSSTransition from './BubbleCSSTransition';
+import Loader from './Loader'
 
 class Bubbles extends Component{
     constructor(props){
@@ -19,29 +18,93 @@ class Bubbles extends Component{
             timeout: {max: 1000, min: 500},
         }
 
-        this.state = {
-            bubbles: this.blowBubblesData(25),
-            //in: false
+        this.imageData = {
+            images: [],
+            listUrl: 'https://picsum.photos/list',
+            imgUrl: 'https://picsum.photos/200/200?image=',
+            playingSymbols: [],
+            playingImages: []
         }
 
-        /*setInterval(() => {
+        this.gameConfig = {
+            playingSymbolsNum: 10,
+            symbolsNumToWin: 3
+        }
 
-            //let bubbles = this.state.bubbles;
+        this.state = {
+            bubbles: this.blowBubblesData(25),
+            showLoader: true,
+            showStartButton: false,
+        }
 
-            let bubbles = this.state.bubbles.map((elem) => {
-                elem.show = false;
-                return elem;
-            })
-
-            this.setState({ bubbles: bubbles })
-            this.startGame();
-        }, 5000)*/
     }
 
-    /*componentDidMount = () => {
-        //this.blowBubbles(3);
-        console.log(this.state)
-    }*/
+
+    componentDidMount(){
+        //this.setState({show: true})
+        fetch(this.imageData.listUrl)
+            .then(res => {
+                return res.json()
+                //console.log('1')
+                //console.log(res)
+            })
+            .then((result) => {
+                //console.log('2')
+                console.log(result)
+                this.imageData.images = result
+                //this.setState({showLoader: false, showStartButton: true})
+                this.chooseSymbols({symbolNum: this.gameConfig.playingSymbolsNum})
+                console.log(this.imageData.playingSymbols)
+                //console.log(this.imageData.imgUrl + this.imageData.images[this.imageData.playingSymbols[0]].id)
+                this.loadImages()
+            },
+                (error) => {
+                    console.log(error)
+                }
+             )
+    }
+
+
+    loadImages = () => {
+        let count = 0;
+        for(let i = 0; i < this.imageData.playingSymbols.length; i++) {
+            fetch(this.imageData.imgUrl + this.imageData.images[this.imageData.playingSymbols[0]].id)
+                .then(res => res.blob())
+                .then((result) => {
+                        //console.log(result)
+                        this.imageData.playingImages.push(result)
+                        count++
+                        if(count === this.imageData.playingSymbols.length)console.log(this.imageData.playingImages)
+                        this.setState({showLoader: false, showStartButton: true})
+                    },
+                    (error) => console.log(error)
+                )
+        }
+    }
+
+
+    chooseSymbols = (args) => {
+        for(let i = 0; i < args.symbolNum; i++){
+            this.pushSymbol()
+        }
+    }
+
+
+    pushSymbol = () => {
+        let number = Math.floor(Math.random() * this.imageData.images.length);
+        //console.log(number)
+        if(this.imageData.playingSymbols.indexOf(number) < 0)this.imageData.playingSymbols.push(number);
+        else this.pushSymbol();
+    }
+
+
+    chooseWinerIfThereIs = () => {
+        if(Math.random() < 0.5){
+            
+        }
+        else return false;
+    }
+
 
     setRandomProperty = (settings) => {
         const min = settings.min || 0;
@@ -91,9 +154,9 @@ class Bubbles extends Component{
             }
         )
 
-        this.setState({bubbles: bubblesData})
+        this.setState({bubbles: bubblesData, showStartButton: false})
 
-        console.log(this.state.bubbles)
+        //console.log(this.state.bubbles)
     }
 
 
@@ -105,6 +168,16 @@ class Bubbles extends Component{
             height: `${item.size}px`, animationDelay: `${item.timeout}ms`}}/>
         ))
     }*/
+
+
+    clickBubble = (e) => {
+        console.log(Math.floor(Math.random() * (this.imageData.playingSymbols.length-1)))
+
+        console.log(this.imageData.images[this.imageData.playingSymbols[Math.floor(Math.random() * (this.imageData.playingSymbols.length-1))]].id)
+        e.target.style.backgroundImage = `url('https://picsum.photos/200/200?image=${
+            this.imageData.images[this.imageData.playingSymbols[Math.floor(Math.random() * (this.imageData.playingSymbols.length-1))]].id
+        }')`
+    }
 
 
     render(){
@@ -120,10 +193,13 @@ class Bubbles extends Component{
                                 left: `${item.left}%`,
                                 width: `${item.size}px`,
                                 height: `${item.size}px`,
-                                animationDelay: `${item.timeout}ms` }}/>
+                                animationDelay: `${item.timeout}ms` }}
+                            onClick={this.clickBubble}
+                        />
                     ))
                 }
-                <StartButton onClick={this.startGame}/>
+                <StartButton onClick={this.startGame} show={this.state.showStartButton}/>
+                <Loader show={this.state.showLoader}/>
             </div>
         )
     }

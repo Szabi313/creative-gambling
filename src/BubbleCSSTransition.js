@@ -20,9 +20,6 @@ class BubbleCSSTransition extends Component{
         this.state = {show: args.in}
     }
 
-    /*componentDidMount(){
-        this.setState({show: true})
-    }*/
 
     clickBubble = (e) => {
         let computedStyle = window.getComputedStyle(e.target)
@@ -33,6 +30,11 @@ class BubbleCSSTransition extends Component{
         this.setState({show: false})
         e.target.style.background = 'none'
         e.target.style.backgroundColor = '#aaa'
+        e.target.style.opacity = 1;
+        //e.target.style.backgroundImage = "url('https://picsum.photos/200/200?image=0')"
+        e.target.style.backgroundSize = 'cover'
+        e.target.style.zIndex = 1
+        this.props.onClick(e)
     }
 
     render(){
