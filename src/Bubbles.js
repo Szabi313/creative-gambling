@@ -28,7 +28,9 @@ class Bubbles extends Component{
 
         this.gameConfig = {
             playingSymbolsNum: 10,
-            symbolsNumToWin: 3
+            symbolsNumToWin: 3,
+            symbolsToBeChoosen: 5,
+            winner: false
         }
 
         this.state = {
@@ -36,6 +38,8 @@ class Bubbles extends Component{
             showLoader: true,
             showStartButton: false,
         }
+
+        this.usedImages = []
 
     }
 
@@ -57,6 +61,7 @@ class Bubbles extends Component{
                 console.log(this.imageData.playingSymbols)
                 //console.log(this.imageData.imgUrl + this.imageData.images[this.imageData.playingSymbols[0]].id)
                 this.loadImages()
+                console.log(this.chooseWinerIfThereIs())
             },
                 (error) => {
                     console.log(error)
@@ -76,6 +81,7 @@ class Bubbles extends Component{
                         count++
                         if(count === this.imageData.playingSymbols.length)console.log(this.imageData.playingImages)
                         this.setState({showLoader: false, showStartButton: true})
+                        this.gameConfig.winner = this.chooseWinerIfThereIs();
                     },
                     (error) => console.log(error)
                 )
@@ -100,7 +106,7 @@ class Bubbles extends Component{
 
     chooseWinerIfThereIs = () => {
         if(Math.random() < 0.5){
-            
+            return Math.floor(Math.random() * this.gameConfig.playingSymbolsNum)
         }
         else return false;
     }
@@ -171,9 +177,11 @@ class Bubbles extends Component{
 
 
     clickBubble = (e) => {
-        console.log(Math.floor(Math.random() * (this.imageData.playingSymbols.length-1)))
+        //console.log(Math.floor(Math.random() * (this.imageData.playingSymbols.length-1)))
+        //console.log(this.imageData.images[this.imageData.playingSymbols[Math.floor(Math.random() * (this.imageData.playingSymbols.length-1))]].id)
 
-        console.log(this.imageData.images[this.imageData.playingSymbols[Math.floor(Math.random() * (this.imageData.playingSymbols.length-1))]].id)
+        
+
         e.target.style.backgroundImage = `url('https://picsum.photos/200/200?image=${
             this.imageData.images[this.imageData.playingSymbols[Math.floor(Math.random() * (this.imageData.playingSymbols.length-1))]].id
         }')`
