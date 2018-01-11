@@ -19,6 +19,11 @@
     to {bottom: 120%}
 }
 
+@keyframes disappearing {
+    from {opacity: 1}
+    to {opacity: 0}
+}
+
 .fly-enter{
     /*bottom: 0;*/
     /*animation-name: flyUp;*/
@@ -35,12 +40,16 @@
 .fly-exit{
     /*bottom: 90%;*/
     /*animation-name: flyUp;*/
+    opacity: 1;
 }
 
 .fly-exit.fly-exit-active{
-    bottom: -30%;
+    /*bottom: -30%;*/
     /*transition: bottom 3000ms ease-out;*/
-    animation-name: flyUp;
-    animation-direction: reverse;
-    animation-duration: 0ms;
+    animation-name: disappearing;
+    /*animation-direction: reverse;*/
+    animation-duration: 3000ms;
+    animation-delay: 0ms;
+    opacity: 0;
+    /*background-image: none;*/
 }

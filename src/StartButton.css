@@ -1,16 +1,25 @@
+.gameContainer{
+    height: 100%
+}
+
 .startButton {
     background-color: deeppink;
     border: none;
-    width: 10%;
+    width: 20%;
     min-width: 120px;
     height: 7%;
     min-height: 50px;
-    position: absolute;
+    /*position: absolute;*/
+    position: relative;
+    top: 30%;
+    text-align: center;
     left: 0;
     -webkit-box-shadow: 1px 1px 1px;
     -moz-box-shadow: 1px 1px 1px;
     box-shadow: 1px 1px 1px;
     font-family: 'Gloria Hallelujah', cursive;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 18px;
+    color: #222222;
+    z-index: 9999;
 }

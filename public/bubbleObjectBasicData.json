@@ -1,0 +1,9 @@
+{
+  "show": false,
+  "id": "",
+  "left": {"max": 80},
+  "duration": {"max": 4000, "min": 2000},
+  "size": {"max": 200, "min": 100},
+  "timeout": {"max": 1000, "min": 500},
+  "basicTimeout": 500
+}

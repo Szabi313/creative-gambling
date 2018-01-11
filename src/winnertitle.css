@@ -1,0 +1,46 @@
+.winnerTitle{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: lightblue;
+    top:0;
+    padding: 10% 0 0;
+    z-index: 10000;
+}
+
+@keyframes winnerPulsing {
+    0% {opacity: 1;  color: deeppink}
+    50% {color: darkorange}
+    60% {opacity: 0.3;}
+    100% {opacity: 1; color: deeppink}
+}
+
+.winnerTitle h3{
+    font-size: 100px;
+    color: deeppink;
+    font-weight: bold;
+    font-family: 'Nothing You Could Do', cursive;
+    animation-name: winnerPulsing;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.winnerTitle img{
+    box-shadow: black 1px 1px 1px;
+    position: relative;
+    top: -75px;
+    left: 35px;
+    opacity: 1;
+}
+
+.greatButton{
+    background-color: coral;
+    padding: 15px;
+    box-shadow: black 1px 1px 1px;
+    font-size: 14px;
+    font-weight: bold;
+    color: darkslategrey;
+    border: none;
+    position: relative;
+    left: -120px;
+}

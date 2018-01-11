@@ -1,0 +1,7 @@
+{
+  "playingSymbolsNum": 10,
+  "symbolsNumToWin": 5,
+  "symbolsToBeChoosen": 10,
+  "winner": false,
+  "oddsToWin": 0.5
+}
