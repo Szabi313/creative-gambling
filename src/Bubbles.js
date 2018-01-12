@@ -23,21 +23,21 @@ class Bubbles extends Component{
 
     //image settings from json file (this is default)
         this.imageData = {
-            images: [],
-            listUrl: 'https://picsum.photos/list',
-            imgUrl: 'https://picsum.photos/200/200?image=',
-            playingSymbols: [],
-            playingImages: [],
-            base64Flag:  'data:image/jpeg;base64,'
+            // images: [],
+            // listUrl: 'https://picsum.photos/list',
+            // imgUrl: 'https://picsum.photos/200/200?image=',
+            // playingSymbols: [],
+            // playingImages: [],
+            // base64Flag:  'data:image/jpeg;base64,'
         }
 
     //game config from backend (this is default)
         this.gameConfig = {
-            playingSymbolsNum: 10,
-            symbolsNumToWin: 5,
-            symbolsToBeChoosen: 10,
-            winner: false,
-            oddsToWin: 0.5
+            // playingSymbolsNum: 10,
+            // symbolsNumToWin: 5,
+            // symbolsToBeChoosen: 10,
+            // winner: false,
+            // oddsToWin: 0.5
         }
 
         // if(this.gameConfig.symbolsToBeChoosen <= 1)this.gameConfig.symbolsToBeChoosen = 2;
@@ -59,6 +59,7 @@ class Bubbles extends Component{
         this.winnerPlaces = [];
     }
 
+
     componentDidMount(){
         fetch('imageData.json')
             .then(res => {
@@ -76,7 +77,7 @@ class Bubbles extends Component{
             .then(res => {
                 this.gameConfig = res
                 console.log(this.gameConfig)
-                
+
                 return res
             })
 
@@ -84,6 +85,7 @@ class Bubbles extends Component{
             .then(res => res.json())
             .then(res => {
                 this.bubbleObjectBasicData = res
+
                 console.log(this.bubbleObjectBasicData)
                 return res
             })
