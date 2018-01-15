@@ -11,7 +11,7 @@
 @keyframes winnerPulsing {
     0% {opacity: 1;  color: deeppink}
     50% {color: darkorange}
-    60% {opacity: 0.3;}
+    /*60% {opacity: 0.3;}*/
     100% {opacity: 1; color: deeppink}
 }
 

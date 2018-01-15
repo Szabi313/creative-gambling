@@ -4,7 +4,10 @@ import StartButton from './StartButton';
 import BubbleCSSTransition from './BubbleCSSTransition';
 import Loader from './Loader';
 //import NewGame from './NewGame'
-import WinnerTitle from './WinnerTitle'
+import WinnerTitle from './WinnerTitle';
+import ClickedSymbol from './ClickedSymbol';
+import Board from './Board';
+
 
 class Bubbles extends Component{
     constructor(props){
@@ -50,7 +53,9 @@ class Bubbles extends Component{
             showStartButton: false,
             showNewGameButton: false,
             showWinnerTitle: false,
-            winnerTitleSrc: ''
+            winnerTitleSrc: '',
+            clickedImgs: [],
+            showBoard: false
         }
 
         this.usedImages = [];
@@ -69,14 +74,14 @@ class Bubbles extends Component{
             .then(res => {
                 //console.log(res)
                 this.imageData = res
-                console.log(this.imageData)
+                //console.log(this.imageData)
                 return res
             })
             .then(res => fetch('gameConfig.json'))
             .then(res => res.json())
             .then(res => {
                 this.gameConfig = res
-                console.log(this.gameConfig)
+                //console.log(this.gameConfig)
 
                 return res
             })
@@ -86,7 +91,7 @@ class Bubbles extends Component{
             .then(res => {
                 this.bubbleObjectBasicData = res
 
-                console.log(this.bubbleObjectBasicData)
+                //console.log(this.bubbleObjectBasicData)
                 return res
             })
 
@@ -96,10 +101,10 @@ class Bubbles extends Component{
                 return res.json()
             })
             .then((result) => {
-                console.log(result)
+                //console.log(result)
                 this.imageData.images = result
                 this.chooseSymbols({symbolNum: this.gameConfig.playingSymbolsNum})
-                console.log(this.imageData.playingSymbols)
+                //console.log(this.imageData.playingSymbols)
                 this.loadImages()
             },
                 (error) => {
@@ -192,7 +197,9 @@ class Bubbles extends Component{
     startGame = () => {
         this.setState({
             showWinnerTitle: false,
-            winnerTitleSrc: ''
+            winnerTitleSrc: '',
+            clickedImgs: [],
+            showBoard: false
         })
         this.winnerPlaces = [];
         this.gameConfig.winner = this.chooseWinerIfThereIs();
@@ -201,7 +208,7 @@ class Bubbles extends Component{
             this.usedImages.push(this.gameConfig.winner)
         }*/
 
-        console.log(this.gameConfig.winner)
+        console.log(`Winner: ${this.gameConfig.winner}`)
 
         if(this.gameConfig.winner !== false){
             for(let i = 0; i < this.gameConfig.symbolsNumToWin; i++) {
@@ -217,7 +224,7 @@ class Bubbles extends Component{
             this.winnerPlaces = this.winnerPlaces.sort()
         }
 
-        console.log(this.winnerPlaces)
+        //console.log(this.winnerPlaces)
 
         if(this.counter) {
             let realBubbles = document.querySelectorAll('.base');
@@ -260,7 +267,27 @@ class Bubbles extends Component{
     }
 
 
+    pushOrIcrementProp = (newItem) => {
+        let forStateClickedImgs = this.state.clickedImgs;
+        let incrementedItem = false;
+
+        /*forStateClickedImgs =*/ forStateClickedImgs.forEach(
+            arrayItem => {
+                if(arrayItem.src == newItem.src){
+                    arrayItem.num++;
+                    incrementedItem = true
+                }
+            }
+        )
+
+        if(!incrementedItem)forStateClickedImgs.push(newItem);
+
+        return forStateClickedImgs;
+    }
+
+
     clickBubble = (e) => {
+        //debugger
         //console.log(e.target.id)
         if(this.usedBubbles.indexOf(e.target.id) >= 0)return;
         else this.usedBubbles.push(e.target.id);
@@ -274,25 +301,35 @@ class Bubbles extends Component{
             //transformNumberCB: (num) => {return this.imageData.playingSymbols[num]}
         })
 
-        console.log(this.usedImages)
-        //console.log(choosed)
-        //console.log(this.imageData.playingImages[choosed])
+        //console.log(this.usedImages)
+
+        /*let forStateClickedImgs = this.usedImages.forEach(item => {
+            if(this.state.clickedImgs.indexOf)
+        })*/
+
+        let forStateClickedImgs = this.state.clickedImgs;
+
 
         if(this.gameConfig.winner === false
             || (this.gameConfig.winner !== false && this.winnerPlaces.indexOf(this.counter-1) < 0)){
             e.target.style.backgroundImage =
                 //`url('https://picsum.photos/200/200?image=${this.imageData.images[choosed].id}')`
                 `url('${this.imageData.base64Flag} ${this.imageData.playingImages[choosed]}')`
+            //forStateClickedImgs.push({src: choosed, num: 1})
+            forStateClickedImgs = this.pushOrIcrementProp({src: choosed, num: 1})
+            this.setState({clickedImgs: forStateClickedImgs, showBoard: true})
         }
         else{
             e.target.style.backgroundImage =
                 //`url('https://picsum.photos/200/200?image=${this.imageData.images[this.imageData.playingSymbols[this.gameConfig.winner]].id}')`
                 `url('${this.imageData.base64Flag} ${this.imageData.playingImages[this.gameConfig.winner]}')`
+            //forStateClickedImgs.push({src: this.gameConfig.winner, num: 1})
+            forStateClickedImgs = this.pushOrIcrementProp({src: this.gameConfig.winner, num: 1})
+            this.setState({clickedImgs: forStateClickedImgs, showBoard: true})
             if(this.winnerPlaces.indexOf(this.counter-1) == this.winnerPlaces.length-1){
-                console.log("*** WINNER ***")
+                //console.log("*** WINNER ***")
                 let originalZindex = e.target.style.zIndex
                 e.target.style.zIndex = 100001
-                //setInterval(() => e.target.style.zIndex = originalZindex, 2000)
                 this.setState({
                     showWinnerTitle: true,
                     winnerTitleSrc: this.imageData.base64Flag + this.imageData.playingImages[this.gameConfig.winner]
@@ -301,6 +338,7 @@ class Bubbles extends Component{
         }
 
 
+        //console.log(this.state.clickedImgs)
 
         if(this.counter === this.gameConfig.symbolsToBeChoosen
             || (this.winnerPlaces.length && this.winnerPlaces.indexOf(this.counter-1) == this.winnerPlaces.length-1)){
@@ -318,13 +356,28 @@ class Bubbles extends Component{
         }
     }
 
+
     toggleWinnerTitle = () => {
-        this.setState(prevState => ({showWinnerTitle: !prevState.showWinnerTitle}))
+        this.setState(prevState => ({
+            showWinnerTitle: !prevState.showWinnerTitle,
+            clickedImgs: [],
+            showBoard: false
+        }))
     }
+
+
+    /*provideClickedImgSrc = imgNum => {
+        if(this.state.clickedImgs.length)return {
+            src: `${this.imageData.base64Flag} ${this.imageData.playingImages[this.state.clickedImgs[imgNum].src]}`,
+            num: this.state.clickedImgs[imgNum].num
+        }
+        else return {src: '', num: 0}
+    }*/
 
 
     render(){
 
+        //console.log(this.provideClikedImgSrc(0))
 
         this.bubbleList = this.state.bubbles.map((item, i) => (
             <BubbleCSSTransition
@@ -348,7 +401,7 @@ class Bubbles extends Component{
                 }
                 <StartButton onClick={this.startGame} show={this.state.showStartButton}/>
                 <WinnerTitle show={this.state.showWinnerTitle} src={this.state.winnerTitleSrc} toggle={this.toggleWinnerTitle}/>
-
+                <Board show={this.state.showBoard} clickedImgs={this.state.clickedImgs} playingImgs={this.imageData.playingImages}/>
 
                 <Loader show={this.state.showLoader}/>
             </div>

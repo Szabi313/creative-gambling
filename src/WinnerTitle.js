@@ -17,7 +17,7 @@ class WinnerTitle extends Component{
             <div className="winnerTitle">
                 <h3>YOU WON!</h3>
                 <img src = {this.props.src} show={this.props.show} className="base"></img>
-                <button onClick={this.toggle} className="greatButton"><span>Great! , ok</span></button>
+                <button onClick={this.toggle} className="greatButton"><span>Great!, ok</span></button>
             </div>
         )
     }

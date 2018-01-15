@@ -1,0 +1,26 @@
+.clickedImgContainer{
+    background-color: black;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    top: 0;
+    z-index: 10002;
+    float: left;
+}
+
+.clickedImgSrc{
+    height: 50px;
+    width: 50px;
+    background-size: cover;
+    background-color: black;
+    position: relative;
+}
+
+.clickedImgSrc img{
+    height: 50px;
+    width: 50px;
+}
+
+.clickedImgNum{
+    width: 50px;
+}
