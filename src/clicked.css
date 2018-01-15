@@ -1,11 +1,11 @@
 .clickedImgContainer{
-    background-color: black;
-    height: 50px;
+    /*background-color: black;*/
+    height: 80px;
     width: 50px;
     position: relative;
     top: 0;
     z-index: 10002;
-    float: left;
+    /*float: left;*/
 }
 
 .clickedImgSrc{

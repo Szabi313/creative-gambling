@@ -7,6 +7,7 @@ import Loader from './Loader';
 import WinnerTitle from './WinnerTitle';
 import ClickedSymbol from './ClickedSymbol';
 import Board from './Board';
+import Instructions from './Instructions';
 
 
 class Bubbles extends Component{
@@ -402,6 +403,7 @@ class Bubbles extends Component{
                 <StartButton onClick={this.startGame} show={this.state.showStartButton}/>
                 <WinnerTitle show={this.state.showWinnerTitle} src={this.state.winnerTitleSrc} toggle={this.toggleWinnerTitle}/>
                 <Board show={this.state.showBoard} clickedImgs={this.state.clickedImgs} playingImgs={this.imageData.playingImages}/>
+                <Instructions gameConfig={this.gameConfig}/>
 
                 <Loader show={this.state.showLoader}/>
             </div>

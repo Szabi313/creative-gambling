@@ -1,0 +1,7 @@
+.instructionsContainer{
+    position: absolute;
+    /*top: 100px;*/
+    top: 0;
+    text-align: left;
+    padding: 0 10px 0;
+}

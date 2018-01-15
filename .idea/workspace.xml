@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d51a0daf-b497-4a19-96f5-aa824ddab19d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ClickedSymbol.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/board.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/clicked.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Instructions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/instructions.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Board.js" afterPath="$PROJECT_DIR$/src/Board.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bubbles.js" afterPath="$PROJECT_DIR$/src/Bubbles.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WinnerTitle.js" afterPath="$PROJECT_DIR$/src/WinnerTitle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/winnertitle.css" afterPath="$PROJECT_DIR$/src/winnertitle.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/board.css" afterPath="$PROJECT_DIR$/src/board.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/clicked.css" afterPath="$PROJECT_DIR$/src/clicked.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,15 +25,17 @@
       <file leaf-file-name="Bubbles.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Bubbles.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="622">
-              <caret line="210" column="29" lean-forward="false" selection-start-line="210" selection-start-column="29" selection-end-line="210" selection-end-column="29" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1516023457678" expanded="true" signature="12846:13199" ph="..." />
-                <marker date="1516023457678" expanded="true" signature="13272:13771" ph="..." />
-                <marker date="1516023457678" expanded="true" signature="13434:13765" ph="..." />
-                <marker date="1516023457678" expanded="true" signature="13563:13765" ph="..." />
-                <marker date="1516023457678" expanded="true" signature="13696:13765" ph="..." />
-                <marker date="1516023457678" expanded="true" signature="13752:13765" ph="..." />
+                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#246#286#0" expanded="true" />
+                <marker date="1516025175491" expanded="true" signature="12889:13242" ph="..." />
+                <marker date="1516025175491" expanded="true" signature="13315:13875" ph="..." />
+                <marker date="1516025175491" expanded="true" signature="13477:13869" ph="..." />
+                <marker date="1516025175491" expanded="true" signature="13606:13869" ph="..." />
+                <marker date="1516025175491" expanded="true" signature="13739:13869" ph="..." />
+                <marker date="1516025175491" expanded="true" signature="13856:13869" ph="..." />
               </folding>
             </state>
           </provider>
@@ -44,7 +44,7 @@
       <file leaf-file-name="Board.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Board.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
+            <state relative-caret-position="442">
               <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
@@ -53,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="board.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="board.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/board.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+              <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -78,18 +78,18 @@
       <file leaf-file-name="clicked.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/clicked.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="15" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="15" />
+            <state relative-caret-position="17">
+              <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WinnerTitle.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WinnerTitle.js">
+      <file leaf-file-name="Instructions.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Instructions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="82" lean-forward="false" selection-start-line="19" selection-start-column="82" selection-end-line="19" selection-end-column="82" />
+            <state relative-caret-position="17">
+              <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -97,41 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="winnertitle.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/winnertitle.css">
+      <file leaf-file-name="instructions.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/instructions.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gameConfig.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/gameConfig.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StartButton.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/StartButton.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BubbleCSSTransition.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BubbleCSSTransition.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+            <state relative-caret-position="51">
+              <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -191,12 +161,14 @@
         <option value="$PROJECT_DIR$/public/bubbleObjectBasicData.json" />
         <option value="$PROJECT_DIR$/src/ClickedSymbol.js" />
         <option value="$PROJECT_DIR$/src/WinnerTitle.js" />
-        <option value="$PROJECT_DIR$/src/board.css" />
-        <option value="$PROJECT_DIR$/src/clicked.css" />
         <option value="$PROJECT_DIR$/src/Board.js" />
-        <option value="$PROJECT_DIR$/src/Bubbles.js" />
         <option value="$PROJECT_DIR$/src/winnertitle.css" />
         <option value="$PROJECT_DIR$/public/gameConfig.json" />
+        <option value="$PROJECT_DIR$/src/Bubbles.js" />
+        <option value="$PROJECT_DIR$/src/Instructions.js" />
+        <option value="$PROJECT_DIR$/src/instructions.css" />
+        <option value="$PROJECT_DIR$/src/clicked.css" />
+        <option value="$PROJECT_DIR$/src/board.css" />
       </list>
     </option>
   </component>
@@ -312,12 +284,12 @@
       <workItem from="1515662462897" duration="17938000" />
       <workItem from="1515744926249" duration="860000" />
       <workItem from="1515747587430" duration="17054000" />
-      <workItem from="1516009712485" duration="10731000" />
+      <workItem from="1516009712485" duration="12966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247894000" />
+    <option name="totallyTimeSpent" value="250129000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -358,28 +330,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Bubbles.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="71" column="8" lean-forward="false" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
-          <folding>
-            <marker date="1516023457678" expanded="true" signature="12846:13199" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13272:13771" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13434:13765" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13563:13765" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13696:13765" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13752:13765" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -420,12 +370,14 @@
         <state relative-caret-position="561">
           <caret line="34" column="102" lean-forward="false" selection-start-line="34" selection-start-column="102" selection-end-line="34" selection-end-column="102" />
           <folding>
-            <marker date="1516023457678" expanded="true" signature="12846:13199" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13272:13771" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13434:13765" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13563:13765" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13696:13765" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13752:13765" ph="..." />
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#246#286#0" expanded="true" />
+            <marker date="1516025175491" expanded="true" signature="12889:13242" ph="..." />
+            <marker date="1516025175491" expanded="true" signature="13315:13875" ph="..." />
+            <marker date="1516025175491" expanded="true" signature="13477:13869" ph="..." />
+            <marker date="1516025175491" expanded="true" signature="13606:13869" ph="..." />
+            <marker date="1516025175491" expanded="true" signature="13739:13869" ph="..." />
+            <marker date="1516025175491" expanded="true" signature="13856:13869" ph="..." />
           </folding>
         </state>
       </provider>
@@ -463,12 +415,14 @@
         <state relative-caret-position="272">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <marker date="1516023457678" expanded="true" signature="12846:13199" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13272:13771" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13434:13765" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13563:13765" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13696:13765" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13752:13765" ph="..." />
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#246#286#0" expanded="true" />
+            <marker date="1516025175491" expanded="true" signature="12889:13242" ph="..." />
+            <marker date="1516025175491" expanded="true" signature="13315:13875" ph="..." />
+            <marker date="1516025175491" expanded="true" signature="13477:13869" ph="..." />
+            <marker date="1516025175491" expanded="true" signature="13606:13869" ph="..." />
+            <marker date="1516025175491" expanded="true" signature="13739:13869" ph="..." />
+            <marker date="1516025175491" expanded="true" signature="13856:13869" ph="..." />
           </folding>
         </state>
       </provider>
@@ -672,14 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/board.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WinnerTitle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -690,36 +636,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/clicked.css">
+    <entry file="file://$PROJECT_DIR$/public/gameConfig.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="15" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="15" />
+        <state relative-caret-position="85">
+          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Board.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bubbles.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="210" column="29" lean-forward="false" selection-start-line="210" selection-start-column="29" selection-end-line="210" selection-end-column="29" />
-          <folding>
-            <marker date="1516023457678" expanded="true" signature="12846:13199" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13272:13771" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13434:13765" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13563:13765" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13696:13765" ph="..." />
-            <marker date="1516023457678" expanded="true" signature="13752:13765" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -731,10 +652,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/gameConfig.json">
+    <entry file="file://$PROJECT_DIR$/src/Bubbles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#246#286#0" expanded="true" />
+            <marker date="1516025175491" expanded="true" signature="12889:13242" ph="..." />
+            <marker date="1516025175491" expanded="true" signature="13315:13875" ph="..." />
+            <marker date="1516025175491" expanded="true" signature="13477:13869" ph="..." />
+            <marker date="1516025175491" expanded="true" signature="13606:13869" ph="..." />
+            <marker date="1516025175491" expanded="true" signature="13739:13869" ph="..." />
+            <marker date="1516025175491" expanded="true" signature="13856:13869" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Board.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Instructions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/instructions.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clicked.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="32" lean-forward="false" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/board.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="18" lean-forward="false" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+          <caret line="5" column="10" lean-forward="false" selection-start-line="5" selection-start-column="10" selection-end-line="5" selection-end-column="10" />
           <folding />
         </state>
       </provider>
