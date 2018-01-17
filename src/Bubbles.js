@@ -8,6 +8,8 @@ import WinnerTitle from './WinnerTitle';
 import ClickedSymbol from './ClickedSymbol';
 import Board from './Board';
 import Instructions from './Instructions';
+import FBLogin from './FBLogin';
+
 
 
 class Bubbles extends Component{
@@ -56,7 +58,9 @@ class Bubbles extends Component{
             showWinnerTitle: false,
             winnerTitleSrc: '',
             clickedImgs: [],
-            showBoard: false
+            showBoard: false,
+            showFBLogin: true,
+            FBName: ''
         }
 
         this.usedImages = [];
@@ -366,14 +370,12 @@ class Bubbles extends Component{
         }))
     }
 
-
-    /*provideClickedImgSrc = imgNum => {
-        if(this.state.clickedImgs.length)return {
-            src: `${this.imageData.base64Flag} ${this.imageData.playingImages[this.state.clickedImgs[imgNum].src]}`,
-            num: this.state.clickedImgs[imgNum].num
+    proceedFBdata = (data) => {
+        console.log(data);
+        if(data.name){
+            this.setState({showFBLogin: false, FBName: data.name})
         }
-        else return {src: '', num: 0}
-    }*/
+    }
 
 
     render(){
@@ -400,10 +402,11 @@ class Bubbles extends Component{
                 {
                     this.bubbleList
                 }
+                <FBLogin cb={this.proceedFBdata} show={this.state.showFBLogin}/>
                 <StartButton onClick={this.startGame} show={this.state.showStartButton}/>
                 <WinnerTitle show={this.state.showWinnerTitle} src={this.state.winnerTitleSrc} toggle={this.toggleWinnerTitle}/>
                 <Board show={this.state.showBoard} clickedImgs={this.state.clickedImgs} playingImgs={this.imageData.playingImages}/>
-                <Instructions gameConfig={this.gameConfig}/>
+                <Instructions gameConfig={this.gameConfig} name={this.state.FBName}/>
 
                 <Loader show={this.state.showLoader}/>
             </div>

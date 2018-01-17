@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Bubbles from './Bubbles'
-import BubbleCSSTransition from './BubbleCSSTransition';
 
 class App extends Component {
 
