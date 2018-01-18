@@ -4,4 +4,6 @@
     top: 0;
     text-align: left;
     padding: 0 10px 0;
+    background-color: slategrey;
+    box-shadow: black 1px 1px 1px;
 }

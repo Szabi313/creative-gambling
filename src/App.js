@@ -15,6 +15,7 @@ class App extends Component {
       <div className="App">
         <div className="title"><span>Creative Gambling</span></div>
         <Bubbles/>
+          <div className="appBackground"></div>
       </div>
     );
   }

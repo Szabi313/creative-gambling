@@ -6,6 +6,9 @@
     top: 0;
     z-index: 10002;
     /*float: left;*/
+    text-align: center;
+    box-sizing: border-box;
+    padding:0;
 }
 
 .clickedImgSrc{
@@ -14,6 +17,7 @@
     background-size: cover;
     background-color: black;
     position: relative;
+    border: #fff 1px solid;
 }
 
 .clickedImgSrc img{

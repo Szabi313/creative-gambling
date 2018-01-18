@@ -36,7 +36,10 @@ class Board extends Component{
 
             return(this.props.show &&
                 <div className="boardContainer">
-                    {clickedImgList}
+                    <div className="inside">
+                        <h4>Scores</h4>
+                        {clickedImgList}
+                    </div>
                 </div>
             )
 
