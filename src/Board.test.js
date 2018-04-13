@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 describe("board", () => {
 
     const test_div = document.createElement('div');
-    const clickedImgs = [{src: 1, num: 2}];
+    let clickedImgs = [{src: 1, num: 2}];
     const playingImgs = ['abc', 'def', 'hij'];
     let board;
 
@@ -29,6 +29,16 @@ describe("board", () => {
         const spy2 = jest.spyOn(board, 'provideClickedImgSrc')
         const imgTest = board.provideClickedImgSrc(0)
         expect(imgTest).toEqual({src: 'data:image/jpeg;base64, def', num: 2})
+    })
+
+
+    test("clickedImg has no element", () => {
+        clickedImgs = [];
+        const spy3 = jest.spyOn(board, 'provideClickedImgSrc')
+        const imgTest = board.provideClickedImgSrc(0)
+        expect(typeof imgTest).toBe('object')
+        expect(imgTest.hasOwnProperty('src')).toBeTruthy()
+        expect(imgTest.hasOwnProperty('num')).toBeTruthy()
     })
 
 })

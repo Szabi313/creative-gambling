@@ -10,6 +10,9 @@ import Board from './Board';
 import Instructions from './Instructions';
 import FBLogin from './FBLogin';
 
+import { connect } from 'react-redux';
+import { addWinnerNumber } from "./actions/index";
+import WinnerNumbersComponent from './winnerNumbersComponent';
 
 
 class Bubbles extends Component{
@@ -199,6 +202,8 @@ class Bubbles extends Component{
     }
 
 
+
+
     startGame = () => {
         this.setState({
             showWinnerTitle: false,
@@ -208,6 +213,9 @@ class Bubbles extends Component{
         })
         this.winnerPlaces = [];
         this.gameConfig.winner = this.chooseWinerIfThereIs();
+
+        this.props.dispatch(addWinnerNumber(this.gameConfig.winner))
+
 
         /*for(let j = 0; j < this.gameConfig.symbolsNumToWin; j++){
             this.usedImages.push(this.gameConfig.winner)
@@ -402,11 +410,13 @@ class Bubbles extends Component{
                 {
                     this.bubbleList
                 }
-                <FBLogin cb={this.proceedFBdata} show={this.state.showFBLogin}/>
+                {!process.env['TEST_ENV'] && <FBLogin cb={this.proceedFBdata} show={this.state.showFBLogin}/>}
                 <StartButton onClick={this.startGame} show={this.state.showStartButton}/>
                 <WinnerTitle show={this.state.showWinnerTitle} src={this.state.winnerTitleSrc} toggle={this.toggleWinnerTitle}/>
                 <Board show={this.state.showBoard} clickedImgs={this.state.clickedImgs} playingImgs={this.imageData.playingImages}/>
                 <Instructions gameConfig={this.gameConfig} name={this.state.FBName}/>
+
+                <WinnerNumbersComponent winnerNumbers/>
 
                 <Loader show={this.state.showLoader}/>
             </div>
@@ -414,4 +424,6 @@ class Bubbles extends Component{
     }
 }
 
-export default Bubbles;
+
+
+export default connect()(Bubbles);
